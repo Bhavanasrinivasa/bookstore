@@ -1,0 +1,218 @@
+.navbar-brand{
+    font-size: x-large;
+    /* color: burlywood; */
+    color: orangered;
+    font-family: 'Fredericka the Great', cursive;
+}
+.nav-link{
+    color:aquamarine;
+}
+.reg {
+  background-color: aquamarine;
+  border-radius: 5px;
+  text-color: orangered;
+  padding: 12px 27px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#home{
+    background: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.4)),url(images/home.jpg);
+    background-size: cover;
+    flex-direction: column;
+    padding-top: 300px;
+}
+#home h1{
+    color: white;
+    padding-bottom: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#home .input-group
+{ 
+    height:45px;
+    padding-bottom: 350px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+ #section1{
+    height: 700px;
+    width: 100%;
+    background-color: aquamarine;
+}
+
+.testimonial-card .card-up {
+    height: 120px;
+    overflow: hidden;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+  .testimonial-card .avatar {
+    width: 110px;
+    margin-top: -60px;
+    overflow: hidden;
+    border: 3px solid #fff;
+    border-radius: 50%;
+  } 
+
+
+  #w-100{
+    text-align: center;
+    border-radius: 2px;
+    border-color: black;
+    width: 200px;
+    height: 200px;
+  }
+
+
+  #rig {
+      max-width:900px;
+      margin:0 auto; /*center aligned*/
+      padding:0;
+      font-size:0; /* Remember to change it back to normal font size if have captions */
+      list-style:none;
+      background-color:#000;
+  }
+  #rig li {
+       display: inline-block; 
+      /* *display:inline;for IE6 - IE7 */
+      width:33.33%;
+      vertical-align:middle;
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+  }
+          
+  /* The wrapper for each item */
+  .rig-cell {
+      /*margin:12px;
+      box-shadow:0 0 6px rgba(0,0,0,0.3);*/
+      display: grid;
+      position: relative;
+      overflow:hidden;
+  }
+          
+  /* If have the image layer */
+  .rig-img {
+      display:block;
+      width: 100%;
+      height: auto;
+      border:none;
+      transform:scale(1);
+      transition:all 1s;
+      height: 200px;
+      
+  }
+  
+  #rig li:hover .rig-img {
+      transform:scale(1.5);
+  }
+          
+  /* If have the overlay layer */
+  .rig-overlay {
+      position: absolute;
+      display:block;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+       background: url(img/link.png) no-repeat center 20%;
+      background-size:50px 50px;
+      opacity:0;
+      filter:alpha(opacity=0);/*For IE6 - IE8*/
+      transition:all 0.6s;
+  }
+  #rig li:hover .rig-overlay {
+      opacity:0.8;
+  }
+  #rig li:hover .rig-text {
+      transform:translateY(0px);
+      opacity:0.9;
+  }
+  
+  @media (max-width: 9000px) {
+      #rig li {
+          width:33.33%;
+      }
+  }
+  
+  @media (max-width: 700px) {
+      #rig li {
+          width:33.33%;
+      }
+  }
+  
+  @media (max-width: 550px) {
+      #rig li {
+          width:50%;
+      }
+  }
+
+
+
+  body{
+    margin:0;
+    overflow-x:hidden;
+    }
+    
+    .footer{
+    background:#000;
+    padding:30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align:center;
+    }
+    
+    .footer .row{
+    width:100%;
+    margin:1% 0%;
+    padding:0.6% 0%;
+    color:gray;
+    display:inline-block;
+    font-size:0.8em;
+    }
+    
+    .footer .row a{
+    text-decoration:none;
+    color:gray;
+    transition:0.5s;
+    }
+    
+    .footer .row a:hover{
+    color:#fff;
+    display:inline-block;
+    }
+    
+    .footer .row ul{
+    width:100%;
+    display:inline-block;
+    }
+    
+    .footer .row ul li{
+    display:inline-block;
+    margin:0px 30px;
+    }
+    
+    .footer .row a i{
+    font-size:2em;
+    margin:0% 1%;
+    display:inline-block;
+    }
+    
+    @media (max-width:720px){
+    .footer{
+    display:block;
+    text-align:left;
+    padding:5%;
+    }
+    .footer .row ul li{
+    display:block;
+    margin:10px 0px;
+    text-align:left;
+    }
+    .footer .row a i{
+    margin:0% 3%;
+    display:block;
+    }
+    }

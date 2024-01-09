@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="data1.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color:grey;">
+        <div class="container-fluid">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="grey" class="bi bi-book "
+                viewBox="0 0 16 16">
+                <path
+                    d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
+            </svg>
+            <link rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+            <a class="navbar-brand" href="index.html" style="font-family: 'Fredericka the Great', cursive;">Book Bonanza!</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item pe-3 ps-3">
+                        <a class="nav-link" id="demo" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item pe-3 ps-3">
+                        <a class="nav-link" id="demo" href="index.html">About us</a>
+                    </li>
+                    <li class="nav-item pe-3 ps-3">
+                        <a class="nav-link" id="demo" href="index.html">Our Team</a>
+                    </li>
+                    <li class="nav-item pe-3 ps-3">
+                        <a class="nav-link" id="demo" href="index.html">Our Bestsellers</a>
+                    </li>
+                    <li class="nav-item pe-3 ps-3">
+                        <a class="nav-link" id="demo" href="data1.html">Our Products</a>
+                    </li>
+                    <li class="nav-item pe-3 ps-3">
+                        <a class="nav-link" id="demo" href="index.html">Gallery</a>
+                    </li>
+                    <li class="nav-item pe-5 ps-3">
+                        <a class="nav-link" id="demo" href="index.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item  pe-5 ps-3">
+                        <button class="reg"><a href="register.html">Register</a></button>
+                    </li>
+                    <li class="nav-item ps-3 pe-0" id="cartbu" class="cart-container">
+                        <button id="cartButton" onclick="openRightMenu()">Cart</button>
+                        <span id="cartValue">0</span>
+                        <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;"
+                            id="rightMenu">
+                            <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close
+                                &times;</button>
+                            <!-- Cart Items Display -->
+                            <div id="cartItemsSection" style="color: black;">
+                                <h2>Cart Items</h2>
+                                <ul id="cartItemsList"></ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="product">
+        <div class="wrapper">
+            <div id="search-container">
+                <input type="search" id="search-input" placeholder="Search product name here.." />
+                <button id="search">Search</button>
+            </div>
+            <div id="buttons">
+                <button class="button-value" onclick="filterProduct('all')">
+                    All
+                </button>
+                <button class="button-value" onclick="filterProduct('Booksets')">
+                    Book Sets
+                </button>
+                <button class="button-value" onclick="filterProduct('Non-Fiction')">
+                    Non-Fiction
+                </button>
+                <button class="button-value" onclick="filterProduct('Fantasy')">
+                    Fantasy
+                </button>
+                <button class="button-value" onclick="filterProduct('Biography')">
+                    Biography
+                </button>
+                <button class="button-value" onclick="filterProduct('Mystery')">
+                    Mystery
+                </button>
+            </div>
+            <div id="products"></div>
+        </div>
+
+        <!-- Script -->
+        <script>
+            function openRightMenu() {
+                document.getElementById("rightMenu").style.display = "block";
+            }
+
+            function closeRightMenu() {
+                document.getElementById("rightMenu").style.display = "none";
+            }
+            let products = {
+            		data: [
+            		       {
+            		         productName: "Harry Potter Book Set",
+            		         category: "Booksets",
+            		         price: "Rs.1550/-",
+            		         image: "images/bs1.webp",
+            		       },
+            		       {
+            		         productName: "Kaikeyi",
+            		         category: "Fantasy",
+            		         price: "Rs.300/-",
+            		         image: "images/fantasy1.webp",
+            		       },
+            		       {
+            		         productName: "Elon Musk ",
+            		         category: "Biography",
+            		         price: "Rs.150/-",
+            		         image: "images/bio1.jpg",
+            		       },
+            		       {
+            		         productName: "Rich Dad Poor Dad",
+            		         category: "Non-Fiction",
+            		         price: "Rs.200/-",
+            		         image: "images/nf1.png",
+            		       },
+            		       {
+            		         productName: "Steve Jobs",
+            		         category: "Biography",
+            		         price: "Rs.220/-",
+            		         image: "images/bio2.jpg",
+            		       },
+            		       {
+            		         productName: "The woven kingdom",
+            		         category: "Fantasy",
+            		         price: "Rs.200/-",
+            		         image: "images/fantasy2.webp",
+            		       },
+            		       {
+            		         productName: "Thorne of Glass Book Set",
+            		         category: "Booksets",
+            		         price: "Rs.2050/-",
+            		         image: "images/bs2.webp",
+            		       },
+            		       {
+            		         productName: "Ego is the enemy",
+            		         category: "Non-Fiction",
+            		         price: "Rs.150/-",
+            		         image: "images/nf2.png",
+            		       },
+            		       {
+            		         productName: "the silent patient",
+            		         category: "Mystery",
+            		         price: "Rs.250/-",
+            		         image:"images/m1.jpeg",
+            		       },
+            		       {
+            		         productName: "Shadow and bone Book Set",
+            		         category: "Booksets",
+            		         price: "Rs.650/-",
+            		         image: "images/bs3.webp",
+            		       },
+                           {
+            		         productName: "The guest list",
+            		         category: "Mystery",
+            		         price: "Rs.250/-",
+            		         image: "images/m2.jpeg",
+            		       },
+                           {
+            		         productName: "The invisible life of Addie Larue",
+            		         category: "Fantasy",
+            		         price: "Rs.290/-",
+            		         image: "images/fantasy3.webp",
+            		       },
+                           {
+            		         productName: "I am malala",
+            		         category: "Biography",
+            		         price: "Rs.200/-",
+            		         image: "images/bio3.jpg",
+            		       },
+                           {
+            		         productName: "think like a monk",
+            		         category: "Non-Fiction",
+            		         price: "Rs.350/-",
+            		         image: "images/nf3.jpeg",
+            		       },
+                           {
+            		         productName: "Sharp objects",
+            		         category: "Mystery",
+            		         price: "Rs.150/-",
+            		         image: "images/m3.jpg",
+            		       },
+                           {
+            		         productName: "Twilight Saga",
+            		         category: "Booksets",
+            		         price: "Rs.900/-",
+            		         image: "images/bs4.webp",
+            		       },
+                           {
+            		         productName: "The subtle art of not giving f*ck",
+            		         category: "Non-Fiction",
+            		         price: "Rs.150/-",
+            		         image: "images/nf4.jpeg",
+            		       },
+                           {
+            		         productName: "Behind closed doors",
+            		         category: "Mystery",
+            		         price: "Rs.400/-",
+            		         image: "images/m4.jpg",
+            		       },
+                           {
+            		         productName: "legendborn",
+            		         category: "Fantasy",
+            		         price: "Rs.350/-",
+            		         image: "images/fantasy4.webp",
+            		       },
+                           {
+            		         productName: "game of thrones",
+            		         category: "Booksets",
+            		         price: "Rs.1000/-",
+            		         image: "images/bs5.webp",
+            		       },
+                           {
+            		         productName: "Michelle obama",
+            		         category: "Biography",
+            		         price: "Rs.270/-",
+            		         image: "images/bio4.jpg",
+            		       },
+                           {
+            		         productName: "SIX OF CROWS",
+            		         category: "Fantasy",
+            		         price: "Rs.450/-",
+            		         image: "images/fantasy7.webp",
+            		       },
+                           {
+            		         productName: "a good girls guide to murder",
+            		         category: "Mystery",
+            		         price: "Rs.400/-",
+            		         image: "images/m6.jpeg",
+            		       },
+                           {
+            		         productName: "the magic",
+            		         category: "Non-Fiction",
+            		         price: "Rs.200/-",
+            		         image: "images/nf5.jpeg",
+            		       },
+            		     ],
+            };
+
+
+            let cartItems = []; // Array to store items added to cart
+            let cartValue = 0; // Variable to store total cart value
+
+            for (let i of products.data) {
+                let card = document.createElement("div");
+                card.classList.add("card",i.category, "hide");
+                let imgContainer = document.createElement("div");
+                imgContainer.classList.add("image-container");
+
+                let image = document.createElement("img");
+                image.setAttribute("src", i.image);
+                imgContainer.appendChild(image);
+                card.appendChild(imgContainer);
+
+                let container = document.createElement("div");
+                container.classList.add("container");
+
+                let name = document.createElement("h5");
+                name.classList.add("product-name");
+                name.innerText = i.productName.toUpperCase();
+                container.appendChild(name);
+
+                let price = document.createElement("h6");
+                price.innerText = i.price;
+                container.appendChild(price);
+
+                let addToCartButton = document.createElement("button");
+                addToCartButton.innerText = "Add to Cart";
+                addToCartButton.classList.add("add-to-cart-btn");
+
+                addToCartButton.addEventListener("click", function () {
+                    cartItems.push(i);
+                    cartValue += parseFloat(i.price.replace("Rs.", "").replace("/-", ""));
+                    document.getElementById("cartValue").innerText = cartValue;
+                    console.log(`Added ${i.productName} to cart!`);
+                    displayCartItems();
+                });
+
+                container.appendChild(addToCartButton);
+                card.appendChild(container);
+                document.getElementById("products").appendChild(card);
+            }
+
+            function displayCartItems() {
+                let cartItemsList = document.getElementById("cartItemsList");
+                cartItemsList.innerHTML = ""; // Clear previous items
+
+                cartItems.forEach((item) => {
+                    let listItem = document.createElement("li");
+                    listItem.innerText = `${item.productName} - ${item.price}`;
+                    cartItemsList.appendChild(listItem);
+                });
+            }
+
+            // Function to remove item from the cart
+            function removeItem(index) {
+                if (index >= 0 && index < cartItems.length) {
+                    let removedItem = cartItems.splice(index, 1)[0];
+                    cartValue -= parseFloat(removedItem.price.replace("Rs.", "").replace("/-", ""));
+                    document.getElementById("cartValue").innerText = cartValue;
+                    console.log(`Removed ${removedItem.productName} from cart!`);
+                    displayCartItems(); // Update displayed cart items
+                }
+            }
+
+            // Update the display of cart items with remove button
+            function displayCartItems() {
+                let cartItemsList = document.getElementById("cartItemsList");
+                cartItemsList.innerHTML = ""; // Clear previous items
+
+                cartItems.forEach((item, index) => {
+                    let listItem = document.createElement("li");
+                    listItem.innerHTML = `${item.productName} - ${item.price} <button onclick="removeItem(${index})">Remove</button>`;
+                    cartItemsList.appendChild(listItem);
+                });
+            }
+
+            //parameter passed from button (Parameter same as category)
+            function filterProduct(value) {
+                //Button class code
+                let buttons = document.querySelectorAll(".button-value");
+                buttons.forEach((button) => {
+                    //check if value equals innerText
+                    if (value.toUpperCase() == button.innerText.toUpperCase()) {
+                        button.classList.add("active");
+                    } else {
+                        button.classList.remove("active");
+                    }
+                });
+
+                //select all cards
+                let elements = document.querySelectorAll(".card");
+                //loop through all cards
+                elements.forEach((element) => {
+                    //display all cards on 'all' button click
+                    if (value == "all") {
+                        element.classList.remove("hide");
+                    } else {
+                        //Check if element contains category class
+                        if (element.classList.contains(value)) {
+                            //display element based on category
+                            element.classList.remove("hide");
+                        } else {
+                            //hide other elements
+                            element.classList.add("hide");
+                        }
+                    }
+                });
+            }
+
+            //Search button click
+            document.getElementById("search").addEventListener("click", () => {
+                //initializations
+                let searchInput = document.getElementById("search-input").value;
+                let elements = document.querySelectorAll(".product-name");
+                let cards = document.querySelectorAll(".card");
+
+                //loop through all elements
+                elements.forEach((element, index) => {
+                    //check if text includes the search value
+                    if (element.innerText.includes(searchInput.toUpperCase())) {
+                        //display matching card
+                        cards[index].classList.remove("hide");
+                    } else {
+                        //hide others
+                        cards[index].classList.add("hide");
+                    }
+                });
+            });
+
+            //Initially display all products
+            window.onload = () => {
+                filterProduct("all");
+            };
+        </script>
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="row">
+                <ul>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                </ul>
+            </div>
+            <h2>Address</h2>
+            <p>3rd Main Rd, Gandhi Nagar, Bengaluru, Karnataka 560009</p>
+            <div class="row">
+                <ul>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="row">
+                <center>Copyright � 2021 - All rights reserved || Designed By: Bhavana </center>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>
