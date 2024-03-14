@@ -9,7 +9,7 @@ let products = {
   data: [
     {
       productName: "Harry Potter Book Set",
-      category: "Booksets",
+      category: "Bookset",
       price: "Rs.1550/-",
       image: "images/bs1.webp",
     },
@@ -45,7 +45,7 @@ let products = {
     },
     {
       productName: "Thorne of Glass Book Set",
-      category: "Booksets",
+      category: "Bookset",
       price: "Rs.2050/-",
       image: "images/bs2.webp",
     },
@@ -63,7 +63,7 @@ let products = {
     },
     {
       productName: "Shadow and bone Book Set",
-      category: "Booksets",
+      category: "Bookset",
       price: "Rs.650/-",
       image: "images/bs3.webp",
     },
@@ -99,7 +99,7 @@ let products = {
     },
     {
       productName: "Twilight Saga",
-      category: "Booksets",
+      category: "Bookset",
       price: "Rs.900/-",
       image: "images/bs4.webp",
     },
@@ -123,7 +123,7 @@ let products = {
     },
     {
       productName: "game of thrones",
-      category: "Booksets",
+      category: "Bookset",
       price: "Rs.1000/-",
       image: "images/bs5.webp",
     },
@@ -154,8 +154,8 @@ let products = {
   ],
 };
 
-let cartItems = []; // Array to store items added to cart
-let cartValue = 0; // Variable to store total cart value
+let cartItems = [];
+let cartValue = 0;
 
 for (let i of products.data) {
   let card = document.createElement("div");
@@ -199,7 +199,7 @@ for (let i of products.data) {
 
 function displayCartItems() {
   let cartItemsList = document.getElementById("cartItemsList");
-  cartItemsList.innerHTML = ""; // Clear previous items
+  cartItemsList.innerHTML = "";
 
   cartItems.forEach((item) => {
     let listItem = document.createElement("li");
@@ -208,7 +208,6 @@ function displayCartItems() {
   });
 }
 
-// Function to remove item from the cart
 function removeItem(index) {
   if (index >= 0 && index < cartItems.length) {
     let removedItem = cartItems.splice(index, 1)[0];
@@ -217,14 +216,13 @@ function removeItem(index) {
     );
     document.getElementById("cartValue").innerText = cartValue;
     console.log(`Removed ${removedItem.productName} from cart!`);
-    displayCartItems(); // Update displayed cart items
+    displayCartItems();
   }
 }
 
-// Update the display of cart items with remove button
 function displayCartItems() {
   let cartItemsList = document.getElementById("cartItemsList");
-  cartItemsList.innerHTML = ""; // Clear previous items
+  cartItemsList.innerHTML = "";
 
   cartItems.forEach((item, index) => {
     let listItem = document.createElement("li");
@@ -233,12 +231,9 @@ function displayCartItems() {
   });
 }
 
-//parameter passed from button (Parameter same as category)
 function filterProduct(value) {
-  //Button class code
   let buttons = document.querySelectorAll(".button-value");
   buttons.forEach((button) => {
-    //check if value equals innerText
     if (value.toUpperCase() == button.innerText.toUpperCase()) {
       button.classList.add("active");
     } else {
@@ -246,47 +241,34 @@ function filterProduct(value) {
     }
   });
 
-  //select all cards
   let elements = document.querySelectorAll(".card");
-  //loop through all cards
   elements.forEach((element) => {
-    //display all cards on 'all' button click
     if (value == "all") {
       element.classList.remove("hide");
     } else {
-      //Check if element contains category class
       if (element.classList.contains(value)) {
-        //display element based on category
         element.classList.remove("hide");
       } else {
-        //hide other elements
         element.classList.add("hide");
       }
     }
   });
 }
 
-//Search button click
 document.getElementById("search").addEventListener("click", () => {
-  //initializations
   let searchInput = document.getElementById("search-input").value;
   let elements = document.querySelectorAll(".product-name");
   let cards = document.querySelectorAll(".card");
 
-  //loop through all elements
   elements.forEach((element, index) => {
-    //check if text includes the search value
     if (element.innerText.includes(searchInput.toUpperCase())) {
-      //display matching card
       cards[index].classList.remove("hide");
     } else {
-      //hide others
       cards[index].classList.add("hide");
     }
   });
 });
 
-//Initially display all products
 window.onload = () => {
   filterProduct("all");
 };
